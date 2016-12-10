@@ -1,0 +1,6 @@
+"employee_id","employee_name","employee_phone","employee_email","department_id"
+1,"Taro Yamada","090-0000-9999","t-yamada@ken.jp",10
+2,"Kenichi Suzuki","090-9999-0000","k-suzuki@ken.jp",20
+3,"Ichiro Ueda","090-1234-5678","i-ueda@ken.jp",30
+4,"Hideaki Ito","090-9988-7766","h-ito@ken.jp",40
+5,"Syouji Inoue","090-8765-4321","s-inoue@ken.jp",50
