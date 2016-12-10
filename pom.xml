@@ -173,6 +173,19 @@
             <version>1.4</version>
         </dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.hibernate.ogm/hibernate-ogm-core -->
+		<dependency>
+			<groupId>org.hibernate.ogm</groupId>
+			<artifactId>hibernate-ogm-cassandra</artifactId>
+			<version>4.2.0.Final</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache-extras.cassandra-jdbc/cassandra-jdbc -->
+		<dependency>
+			<groupId>org.apache-extras.cassandra-jdbc</groupId>
+			<artifactId>cassandra-jdbc</artifactId>
+			<version>1.2.5</version>
+		</dependency>
+
     </dependencies>
     <build>
         <plugins>

@@ -4,6 +4,8 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+    <!-- <bean id="dataSource" class="org.apache.cassandra.cql.jdbc.CassandraDataSource" > -->
+    <!-- <bean id="dataSource" class="org.openspaces.persistency.cassandra.CassandraSpaceDataSourceFactoryBean"> -->
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
 		<property name="url" value="jdbc:mysql://localhost:3306/spring_database"/>
 		<property name="username" value="root"/>
@@ -14,7 +16,7 @@
         <property name="timeBetweenEvictionRunsMillis" value="1800000"/>
         <property name="numTestsPerEvictionRun" value="3"/>
         <property name="minEvictableIdleTimeMillis" value="1800000"/>
-        <property name="validationQuery" value="SELECT 1"/>
+        <!-- <property name="validationQuery" value="SELECT 1"/> -->
 	</bean>
 
 	<!-- Hibernate 4 SessionFactory Bean definition -->
@@ -28,8 +30,25 @@
 		</property>
 		<property name="hibernateProperties">
 			<props>
+				<!--
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
 				<prop key="hibernate.show_sql">true</prop>
+
+				<prop key="hibernate.dialect">org.hibernate.dialect.Dialect</prop>
+				 -->
+				<!-- -->
+				<prop key="hibernate.dialect">org.hibernate.ogm.dialect.cassandra.CassandraCQL2Dialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.ogm.datastore.provider">org.hibernate.ogm.datastore.cassandra.impl.CassandraDatastoreProvider</prop>
+				<prop key="hibernate.ogm.datastore.host">localhost</prop>
+				<prop key="hibernate.ogm.datastore.port">9042</prop>
+				<prop key="hibernate.ogm.datastore.database">spring_database</prop>
+				<prop key="hibernate.search.lucene_version">LUCENE_CURRENT</prop>
+				<prop key="hibernate.ogm.cassandra.url">jdbc:cassandra://localhost:9160</prop>
+				<prop key="hibernate.ogm.cassandra.default_keyspace">spring_database</prop>
+				<prop key="hibernate.ogm.cassandra.autogenerate">update</prop>
+				<!-- -->
+
 			</props>
 		</property>
 	</bean>
