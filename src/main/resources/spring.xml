@@ -6,10 +6,10 @@
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
     <!-- <bean id="dataSource" class="org.apache.cassandra.cql.jdbc.CassandraDataSource" > -->
     <!-- <bean id="dataSource" class="org.openspaces.persistency.cassandra.CassandraSpaceDataSourceFactoryBean"> -->
-		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-		<property name="url" value="jdbc:mysql://localhost:3306/spring_database"/>
-		<property name="username" value="root"/>
-		<property name="password" value="mysqladmin"/>
+		<property name="driverClassName" value="org.apache.cassandra.cql.jdbc.CassandraDriver"/>
+		<property name="url" value="jdbc:cassandra://localhost:9160/spring_database"/>
+		<property name="username" value=""/>
+		<property name="password" value=""/>
         <property name="testOnBorrow" value="true"/>
         <property name="testOnReturn" value="true"/>
         <property name="testWhileIdle" value="true"/>
@@ -38,9 +38,11 @@
 				 -->
 				<!-- -->
 				<prop key="hibernate.dialect">org.hibernate.ogm.dialect.cassandra.CassandraCQL2Dialect</prop>
+
 				<prop key="hibernate.show_sql">true</prop>
 				<!-- <prop key="hibernate.ogm.datastore.provider">org.hibernate.ogm.datastore.cassandra.impl.CassandraDatastoreProvider</prop> -->
-				<prop key="hibernate.ogm.datastore.provider">org.hibernate.ogm.datastore.spi.DatastoreProvider</prop>
+				<!-- <prop key="hibernate.ogm.datastore.provider">org.hibernate.ogm.datastore.spi.DatastoreProvider</prop> -->
+				<prop key="hibernate.ogm.datastore.provider">org.hibernate.ogm.jpa.HibernateOgmPersistence</prop>
 				<prop key="hibernate.ogm.datastore.host">localhost</prop>
 				<prop key="hibernate.ogm.datastore.port">9042</prop>
 				<prop key="hibernate.ogm.datastore.database">spring_database</prop>
