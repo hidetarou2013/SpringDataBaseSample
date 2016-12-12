@@ -177,13 +177,26 @@
 		<dependency>
 			<groupId>org.hibernate.ogm</groupId>
 			<artifactId>hibernate-ogm-cassandra</artifactId>
-			<version>5.0.3.Final</version>
+			<version>4.2.0.Final</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.apache-extras.cassandra-jdbc/cassandra-jdbc -->
 		<dependency>
 			<groupId>org.apache-extras.cassandra-jdbc</groupId>
 			<artifactId>cassandra-jdbc</artifactId>
 			<version>1.2.5</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.hibernate.ogm/hibernate-ogm-infinispan -->
+		<dependency>
+			<groupId>org.hibernate.ogm</groupId>
+			<artifactId>hibernate-ogm-infinispan</artifactId>
+			<version>4.2.0.Final</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.0-api -->
+		<dependency>
+			<groupId>org.hibernate.javax.persistence</groupId>
+			<artifactId>hibernate-jpa-2.0-api</artifactId>
+			<version>1.0.1.Final</version>
 		</dependency>
 
     </dependencies>
