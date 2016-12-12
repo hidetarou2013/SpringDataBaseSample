@@ -32,17 +32,22 @@
 			<props>
 				<!--
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+
 				<prop key="hibernate.show_sql">true</prop>
 
 				<prop key="hibernate.dialect">org.hibernate.dialect.Dialect</prop>
 				 -->
-				<!-- -->
-				<prop key="hibernate.dialect">org.hibernate.ogm.dialect.cassandra.CassandraCQL2Dialect</prop>
 
+				<prop key="hibernate.dialect">org.hibernate.ogm.dialect.cassandra.CassandraCQL2Dialect</prop>
+				<!-- -->
+				<!--
+				<prop key="hibernate.dialect">org.hibernate.ogm.datastore.cassandra.CassandraDialect</prop>
+				 -->
 				<prop key="hibernate.show_sql">true</prop>
 				<!-- <prop key="hibernate.ogm.datastore.provider">org.hibernate.ogm.datastore.cassandra.impl.CassandraDatastoreProvider</prop> -->
 				<!-- <prop key="hibernate.ogm.datastore.provider">org.hibernate.ogm.datastore.spi.DatastoreProvider</prop> -->
 				<prop key="hibernate.ogm.datastore.provider">org.hibernate.ogm.jpa.HibernateOgmPersistence</prop>
+				<!-- <prop key="hibernate.ogm.datastore.provider">cassandra</prop> -->
 				<prop key="hibernate.ogm.datastore.host">localhost</prop>
 				<prop key="hibernate.ogm.datastore.port">9042</prop>
 				<prop key="hibernate.ogm.datastore.database">spring_database</prop>
