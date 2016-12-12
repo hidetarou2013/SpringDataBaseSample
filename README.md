@@ -65,6 +65,7 @@ $ docker run --name cassandra_2_1_16 -d -p 7000:7000 -p 7199:7199 -p 9042:9042 -
 
 ### cqlshにて、KEYSPACE、テーブル（COLUMN FAMILIY）作成＆データ登録
 
+cat spring_database.cql
 
 ```
 CREATE KEYSPACE spring_database WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 1 };
@@ -110,6 +111,17 @@ INSERT INTO employees (employee_id, employee_name,employee_phone,employee_email,
 
 SELECT * FROM employees;
 
+```
+
+### csqsh にてログイン後DDLのロード
+
+```
+$ docker cp /vagrant/spring_database.cql cassandra_3_9:/tmp/spring_database.cql
+$ docker-enter cassandra_3_9
+
+# ls -l /tmp
+# cqlsh
+cqlsh> SOURCE '/tmp/spring_database.cql'
 ```
 
 ### flush にて書き込み
